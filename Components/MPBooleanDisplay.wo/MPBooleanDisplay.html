@@ -1,0 +1,12 @@
+
+<wo:if condition = "$isNull">
+	&nbsp;
+</wo:if>
+<wo:else>
+	<wo:if condition = "$isTrue">
+		<wo:img filename = "$trueImage" height = "$imageHeight" />
+	</wo:if>
+	<wo:else>
+		<wo:img filename = "$falseImage" height = "$imageHeight" />
+	</wo:else>
+</wo:else>

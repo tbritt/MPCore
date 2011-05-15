@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="MPExceptionPage.java" wocomponentcontent="false">
+
+        <binding name="exception"/>
+        <validation message="'exception' is a required binding.">
+            <unbound name="exception"/>
+        </validation>
+    </wo>
+</wodefinitions>

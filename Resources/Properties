@@ -1,0 +1,4 @@
+
+com.monkeypantssoftware.core.appserver.MPSession.sessionUsesCookies=false
+
+er.extensions.ERXApplication.DefaultEncoding=UTF8

@@ -1,0 +1,35 @@
+<div class="yui-skin-sam">
+	<wo:text value = "$value" name = "$id" id = "$id" />
+</div>
+<wo:AjaxSubmitButton functionName = "ajaxSave" action = "$save" />
+				
+<script>
+	var <wo:str value = "$javascriptEditorVar"/> = new YAHOO.widget.Editor('<wo:str value = "$id" />', {
+	    height: '<wo:str value = "$height" />px',
+	    width: '<wo:str value = "$width" />px',
+	    animate: true,
+	    limitCommands: true,
+	    markup: 'xhtml',
+	    toolbar: {
+	        titlebar: '<wo:str value = "$editorTitle" />',
+	        collapse: true, 
+	        <wo:str value = "$buttons" />
+	    }
+	});
+	
+	<wo:str value = "$javascriptEditorVar"/>.on('toolbarLoaded', function() {
+        this.toolbar.on('toolbarCollapsed', function() {
+            <wo:str value = "$javascriptEditorVar"/>.saveHTML();
+            ajaxSave();
+            <wo:str value = "$onCollapse" />
+        }, <wo:str value = "$javascriptEditorVar"/>, true);
+    }, <wo:str value = "$javascriptEditorVar"/>, true);
+    
+	<wo:str value = "$javascriptEditorVar"/>.on('editorWindowBlur', function() { 
+		this.saveHTML();
+		ajaxSave();
+		<wo:str value = "$onBlur" />
+	});
+	
+	<wo:str value = "$javascriptEditorVar"/>.render();	
+</script>
